@@ -19,6 +19,7 @@ import { ProducttableComponent } from './admin/producttable/producttable.compone
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditproductComponent } from './admin/editproduct/editproduct.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { EditproductComponent } from './admin/editproduct/editproduct.component'
     ProducttableComponent,
     AddproductComponent,
     EditproductComponent,
+    ErrorComponent,
 
   ],
   imports: [

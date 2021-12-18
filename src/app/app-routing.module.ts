@@ -22,7 +22,8 @@ const routes: Routes = [
 
     ]},
   {path: 'products/:id', component:ProductdetailsComponent},
-  {path: 'admin/editproduct/:id', component:EditproductComponent}
+  {path: 'admin/editproduct/:id', component:EditproductComponent},
+  {path: '**', redirectTo: '/error'}
 ];
 
 @NgModule({
