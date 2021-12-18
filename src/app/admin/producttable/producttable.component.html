@@ -1,0 +1,34 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Тип товара</th>
+    <th scope="col">Вендор</th>
+    <th scope="col">Модель</th>
+    <th scope="col">Описание</th>
+    <th scope="col">Цена</th>
+    <th scope="col">Фото</th>
+    <th scope="col">Почта Вендора</th>
+    <th scope="col">Наличие на складе</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productService.products"   >
+    <th scope="row">{{product.id}}</th>
+    <td>{{product.productType}}</td>
+    <td>{{product.vendor}}</td>
+    <td>{{product.model}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.price}}</td>
+    <td><img src="{{product.img}}" alt="..." width="80px" class="img-thumbnail"></td>
+    <td>{{product.vendorEmail}}</td>
+    <td>{{product.count}}</td>
+    <td>
+      <a type="button" [routerLink]="['editproduct', product.id ]" class="btn btn-outline-warning">Редакитровать</a>
+    </td>
+    <td>
+      <a type="button"  (click)="delProduct(product.id)" class="btn btn-outline-danger">Удалить</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

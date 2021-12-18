@@ -1,0 +1,113 @@
+<h3>Add product</h3>
+<form class="row g-3" [formGroup]="form" (ngSubmit)="submit()" >
+  <div class="col-md-4">
+    <label for="productType" class="form-label">Тип товара</label>
+    <input type="text" class="form-control" id="productType" formControlName="productType" required>
+    <div *ngIf="this.form.controls['productType'].invalid && this.form.controls['productType'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['productType'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['productType'].hasError('minlength')"
+      >Минимум 4 символа</small>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="vendor" class="form-label">Вендор</label>
+    <input type="text" class="form-control " id="vendor" formControlName="vendor" >
+    <div *ngIf="this.form.controls['vendor'].invalid && this.form.controls['vendor'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['vendor'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['vendor'].hasError('minlength')"
+      >Минимум 4 символа</small>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="vendorEmail" class="form-label">Контакты Вендора</label>
+    <input type="email" class="form-control " id="vendorEmail" formControlName="vendorEmail" >
+    <div *ngIf="this.form.controls['vendorEmail'].invalid && this.form.controls['vendorEmail'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['vendorEmail'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['vendorEmail'].hasError('email')"
+      >Не коректный формат почты</small>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="model" class="form-label">Модель</label>
+    <input type="text" class="form-control" id="model" formControlName="model" >
+    <div *ngIf="this.form.controls['model'].invalid && this.form.controls['model'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['model'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['model'].hasError('minlength')"
+      >Минимум 4 символа</small>
+    </div>
+  </div>
+  <div class="col-md-1">
+    <label for="price" class="form-label">Цена</label>
+    <input type="number" class="form-control " id="price" formControlName="price" >
+    <div *ngIf="this.form.controls['price'].invalid && this.form.controls['price'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['price'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['price'].hasError('min')"
+      >Минимальная цена 1</small>
+    </div>
+  </div>
+  <div class="col-md-1">
+    <label for="count" class="form-label">Наличие</label>
+    <input type="number" class="form-control " id="count" formControlName="count" >
+    <div *ngIf="this.form.controls['count'].invalid && this.form.controls['count'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['count'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['count'].hasError('min')"
+      >Количество не может быть отрицательным</small>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="img" class="form-label">Url картинки</label>
+    <input type="text" class="form-control " id="img" formControlName="img" >
+    <div *ngIf="this.form.controls['img'].invalid && this.form.controls['img'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['img'].hasError('required')"
+      >Поле не может быть пустым</small>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <label for="description" class="form-label">Описание</label>
+    <textarea class="form-control " id="description" formControlName="description" ></textarea>
+    <div *ngIf="this.form.controls['description'].invalid && this.form.controls['description'].touched"
+         class="invalid" >
+      <small *ngIf="this.form.controls['description'].hasError('required')"
+      >Поле не может быть пустым</small>
+      <small
+        *ngIf="this.form.controls['description'].hasError('minlength')"
+      >Минимум 10 симоволов</small>
+    </div>
+  </div>
+  <div class="col-12 mb-3">
+    <button class="btn btn-outline-dark me-2" type="submit">Добавить</button>
+    <a [routerLink]="['/admin/','clear']" class="btn btn-outline-dark " >Отмена</a>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+

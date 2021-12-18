@@ -1,0 +1,29 @@
+<div class="card mb-3  border-dark mb-3" >
+  <div class="row g-0">
+    <div class="m-3 col-md-3">
+      <img src="{{product.img}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+
+        <h5 class="card-title"><a [routerLink]="['/products', product.id ]"> {{product.model}}</a></h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" [appVendoEmail]="'orange'" >Вендор: {{product.vendor}}
+
+          </li>
+          <li class="list-group-item"style="display: none" >Емайл Вендора: {{product.vendorEmail}}</li>
+          <li class="list-group-item">Цена: {{product.price}}</li>
+          <li class="list-group-item">Количество: {{product.count}}</li>
+          <li class="list-group-item">Тип товара: {{product.productType}}</li>
+        </ul>
+        <div >
+          <button type="button" class="btn btn-outline-dark" (click)="myVisible =!myVisible" >Детальнее</button>
+          <ng-template [appProdDetails]="!myVisible" >
+            <hr>
+            <p>{{product.description}}</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
